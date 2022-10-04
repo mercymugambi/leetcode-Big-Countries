@@ -1,48 +1,22 @@
-# leetcode-Big-Countries
-This is a Leetcode database challenge. 
+# leetcode-Big-Countries challenge
+This is a Leetcode SQL challenge. 
 
-+-------------+---------+
-| Column Name | Type    |
-+-------------+---------+
-| name        | varchar |
-| continent   | varchar |
-| area        | int     |
-| population  | int     |
-| gdp         | int     |
-+-------------+---------+
+The challenge is as follows. 
 
-name is the primary key column for this table.
-Each row of this table gives information about the name of a country, the continent to which it belongs, its area, the population, and its GDP value.
 
-A country is big if:
+![part1](https://user-images.githubusercontent.com/48310207/193898490-2ca82af3-318f-48db-9421-026c88cbfd19.PNG)
+![part2](https://user-images.githubusercontent.com/48310207/193898620-f1ae59b3-d250-4892-b066-a741343f0c87.PNG)
+![part3](https://user-images.githubusercontent.com/48310207/193898650-5af5a0a6-041e-4cf1-8b77-6487b3d556cc.PNG)
 
-it has an area of at least three million (i.e., 3000000 km2), or
-it has a population of at least twenty-five million (i.e., 25000000).
-Write an SQL query to report the name, population, and area of the big countries.
+Upon going through the challenge, below is my code executed on phpmyAdmin database.
 
-Return the result table in any order.
+SELECT name, population, area
+FROM World
+WHERE area >=3000000 or population >=25000000
 
-The query result format is in the following example.
+And this is the output to the solution simiral to the challenge output. yeah!
 
- 
+![solution](https://user-images.githubusercontent.com/48310207/193900285-5ac64289-7ab3-4bbe-97eb-aa4f18ea3439.PNG)
 
-Example 1:
 
-Input: 
-World table:
-+-------------+-----------+---------+------------+--------------+
-| name        | continent | area    | population | gdp          |
-+-------------+-----------+---------+------------+--------------+
-| Afghanistan | Asia      | 652230  | 25500100   | 20343000000  |
-| Albania     | Europe    | 28748   | 2831741    | 12960000000  |
-| Algeria     | Africa    | 2381741 | 37100000   | 188681000000 |
-| Andorra     | Europe    | 468     | 78115      | 3712000000   |
-| Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
-+-------------+-----------+---------+------------+--------------+
-Output: 
-+-------------+------------+---------+
-| name        | population | area    |
-+-------------+------------+---------+
-| Afghanistan | 25500100   | 652230  |
-| Algeria     | 37100000   | 2381741 |
-+-------------+------------+---------+
+Try it too
